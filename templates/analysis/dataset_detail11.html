@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ dataset.data_name}}</h2>
+<p><strong>Uploaded at:</strong> {{ dataset.uploaded_at }}</p>
+
+<h4>📋 Columns:</h4>
+<ul>
+  {% for col in columns_list %}
+    <li>{{ col }}</li>
+  {% endfor %}
+</ul>
+
+<h4>📊 Summary:</h4>
+<div class="table-responsive">
+  {{ summary|safe }}
+</div>
+
+<h4>📈 Chart:</h4>
+{{ chart_html|safe }}
+
+<a href="{{ds.get_url}}" class="btn btn-secondary mt-4">⬅ Back to Dataset List</a>
+{% endblock %}

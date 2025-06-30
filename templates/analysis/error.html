@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="alert alert-danger mt-4" role="alert">
+  <h4 class="alert-heading">❌ An error occurred!</h4>
+  <p>{{ error }}</p>
+  <hr>
+  <a href="{% url 'upload_and_analyze' %}" class="btn btn-primary mt-2">🔙 Try Again</a>
+</div>
+{% endblock %}

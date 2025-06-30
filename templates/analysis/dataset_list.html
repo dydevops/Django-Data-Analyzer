@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📁 All Uploaded Datasets</h2>
+<ul class="list-group">
+  {% for ds in datasets %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <a href="{{ds.get_url}}">{{ ds.data_name}}</a>
+      <small>{{ ds.uploaded_at }}</small>
+    </li>
+  {% empty %}
+    <li class="list-group-item">No datasets uploaded yet.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

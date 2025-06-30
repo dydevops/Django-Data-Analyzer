@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>{{ dataset.data_name }}</h2>
+<p><strong>Uploaded at:</strong> {{ dataset.uploaded_at }}</p>
+
+<hr>
+
+<h4>📋 Columns in Dataset</h4>
+<ul>
+  {% for col in columns_list %}
+    <li>{{ col }}</li>
+  {% endfor %}
+</ul>
+
+<hr>
+
+<h4>📊 Data Summary</h4>
+<div class="table-responsive">
+  {{ summary|safe }}
+</div>
+
+<hr>
+
+<h4>📈 Histogram Chart</h4>
+<div>
+  {{ chart_html|safe }}
+</div>
+
+<hr>
+
+<h4>🥧 Pie Chart</h4>
+<div>
+  {{ pie_chart_html|safe }}
+</div>
+
+<h4>📈 Line Chart</h4>
+<div>
+  {{ line_chart_html|safe }}
+</div>
+
+<h4>📉 Area Chart</h4>
+<div>
+  {{ area_chart_html|safe }}
+</div>
+
+
+<a href="{% url 'dataset_list' %}" class="btn btn-secondary mt-4">⬅ Back to Dataset List</a>
+
+{% endblock %}

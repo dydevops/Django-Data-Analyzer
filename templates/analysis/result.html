@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow mb-4">
+  <div class="card-body">
+    <h4>📊 Data Summary</h4>
+    <div class="table-responsive">
+      {{ summary|safe }}
+    </div>
+  </div>
+</div>
+
+{% if chart_html %}
+<div class="card shadow">
+  <div class="card-body">
+    <h4>📈 Visualization</h4>
+    {{ chart_html|safe }}
+  </div>
+</div>
+{% endif %}
+<a href="{% url 'upload_and_analyze' %}" class="btn btn-secondary mt-4">🔙 Upload Another</a>
+{% endblock %}
