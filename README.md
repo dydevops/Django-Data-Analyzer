@@ -25,5 +25,5 @@ A simple web application built with **Django**, **Bootstrap**, and **Plotly** th
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/dydevops/Data-Analyzer.git
+git clone https://github.com/dydevops/Django-Data-Analyzer.git
 cd django-data-analyzer
